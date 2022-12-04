@@ -1,2 +1,7 @@
-1 - Create a directory inside test.resources with name Features
+#Cucumber
+
+1 - Create a directory inside test.resources with name features
 2 - Create a document name.feature
+3 - Run the feature file
+4 - Add step Definitions/ Glue code under src/test/java package
+5 - Create a Runner class
