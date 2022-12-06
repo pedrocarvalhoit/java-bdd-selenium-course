@@ -1,19 +1,20 @@
-package stepDefinitions;
+package stepDefinitions.loginDemo.steps;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import pages.LoginPage;
 
 import java.util.concurrent.TimeUnit;
 
-public class LoginDemoSteps {
+public class LoginDemoStepsPOM {
 
     WebDriver driver = null;
+    LoginPage loginPage;
 
     @Given("browser is open")
     public void browser_is_open() {
@@ -33,22 +34,26 @@ public class LoginDemoSteps {
         driver.navigate().to("https://example.testproject.io/web/");
     }
 
-    @When("user enters username and password")
-    public void user_enters_username_and_password() {
-        driver.findElement(By.id("name")).sendKeys("Pedro Duarte");
-        driver.findElement(By.id("password")).sendKeys("12345");
+    @When("^user enters (.*) and (.*)$")
+    public void user_enters_username_and_password(String username, String password) throws InterruptedException {
+
+        loginPage = new LoginPage(driver);
+        loginPage.enterUsername(username);
+        loginPage.enterPassword(password);
+
+        Thread.sleep(2000);
     }
 
     @And("user clicks on login")
     public void user_clicks_on_login() {
-        driver.findElement(By.id("login")).submit();
+        loginPage.clickLoginButton();
     }
 
     @Then("user is navigated to the home")
     public void user_is_navigated_to_the_home() {
 
       //  Assert.assertTrue(driver.getPageSource().contains("Logout"));.
-        driver.findElement(By.id("logout")).isDisplayed();
+        loginPage.checkLogoutIsDisplayed();
         driver.close();
         driver.quit();
 
