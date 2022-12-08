@@ -1,11 +1,12 @@
-package stepDefinitions.hooks;
+package stepDefinitions.backGround;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "classpath:hooksDemo"
+@CucumberOptions(features = "classpath:backGroundDemo"
 )
-public class TestRunnerForHooks {
+public class TestRunnerForBackGround {
+
 }

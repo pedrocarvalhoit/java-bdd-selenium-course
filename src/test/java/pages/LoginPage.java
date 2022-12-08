@@ -33,11 +33,24 @@ public class LoginPage {
     }
 
     public void clickLoginButton(){
+
         driver.findElement(btn_login).click();
     }
 
+    public void clickLogoutButton(){
+
+        driver.findElement(btn_logout).click();
+    }
+
+
     public void checkLogoutIsDisplayed(){
+
         driver.findElement(btn_logout).isDisplayed();
+    }
+
+    public void checkLogoutIsNotDisplayed(){
+
+        driver.findElement(btn_logout).isEnabled();
     }
 
     public void loginValidUser(String username, String password){

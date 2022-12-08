@@ -34,7 +34,7 @@ public class LoginDemoStepsPOM {
         driver.navigate().to("https://example.testproject.io/web/");
     }
 
-    @When("^user enters (.*) and (.*)$")
+    @When("user enters username and password")
     public void user_enters_username_and_password(String username, String password) throws InterruptedException {
 
         loginPage = new LoginPage(driver);
