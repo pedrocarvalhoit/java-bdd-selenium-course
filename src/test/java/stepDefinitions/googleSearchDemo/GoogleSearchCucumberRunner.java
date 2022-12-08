@@ -1,4 +1,4 @@
-package stepDefinitions.googleSteps;
+package stepDefinitions.googleSearchDemo;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;

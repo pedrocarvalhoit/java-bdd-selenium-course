@@ -1,4 +1,4 @@
-package stepDefinitions.googleSteps.steps;
+package stepDefinitions.googleSearchDemo.steps;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
