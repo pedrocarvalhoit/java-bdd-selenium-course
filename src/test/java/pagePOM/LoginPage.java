@@ -1,8 +1,9 @@
-package pages;
+package pagePOM;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+/**Login Page with Page Object Model */
 public class LoginPage {
 
     protected WebDriver driver;
